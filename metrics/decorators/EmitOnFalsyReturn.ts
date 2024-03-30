@@ -21,7 +21,7 @@ const recordIfReturnValueFalsy = (operationName: string, serviceName: string, re
  * https://www.freecodecamp.org/news/what-are-falsey-values-in-javascript/#how-to-check-if-a-value-is-falsy-in-javascript
  * Applicable for both sync/asynchronous functions.
  */
-export default <T>() => {
+export default function EmitOnFalsyReturn() {
     return (target: object, propertyKey: string, descriptor: PropertyDescriptor) => {
         const originalMethod = descriptor.value;
         descriptor.value = function (...args) {
